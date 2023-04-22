@@ -1,7 +1,13 @@
 
 const Navbar = () => {
   return (
-    <div>Nvbar</div>
+    <div className="bg-white text-black">
+      <button>
+        shop
+      </button>
+      <button>about</button>
+
+    </div>
   )
 }
 
