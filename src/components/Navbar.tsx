@@ -1,18 +1,19 @@
-import { useState } from "react"
+import { useRef, useState } from "react"
 import Button from "./Button"
 import Search from "./Search"
 
 const Navbar = () => {
-    const [onShowSearch, setOnShowSearch] = useState(false)
+    const [onShowSearch, setOnShowSearch] = useState<boolean | null>(null)
+    const searchRef = useRef<HTMLDivElement>(null)
 
     return (
         <div className="font-semibold text-black w-100 flex flex-col">
-            {onShowSearch && (
+            <div ref={searchRef}>
                 <Search
                     onShow={onShowSearch}
                     setOnShow={() => setOnShowSearch(false)}
                 />
-            )}
+            </div>
             <div className="flex justify-between bg-yellow-500 px-12 py-6 ">
                 <div className="flex gap-2">
                     <Button>SHOP</Button>
