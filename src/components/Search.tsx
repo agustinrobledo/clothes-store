@@ -16,13 +16,13 @@ const Search = ({ onShow }: searchProps) => {
         if (onShow === false) {
             gsap.to(searchRef.current, {
                 height: "0",
-                duration: 1,
+                duration: 0.3,
             })
             showRef.current = false
         } else if (onShow === true) {
             gsap.to(searchRef.current, {
                 height: "auto",
-                duration: 1,
+                duration: 0.3,
             })
             showRef.current = true
         }
