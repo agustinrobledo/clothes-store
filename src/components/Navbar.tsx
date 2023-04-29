@@ -1,27 +1,25 @@
-import { useRef, useState } from "react"
+import { useLayoutEffect, useRef, useState } from "react"
 import Button from "./Button"
 import Search from "./Search"
+import { gsap } from "gsap"
 
 const Navbar = () => {
     const [onShowSearch, setOnShowSearch] = useState<boolean | null>(null)
-    const searchRef = useRef<HTMLDivElement>(null)
+
+    const handleSearch = () => {
+        setOnShowSearch(!onShowSearch)
+    }
 
     return (
         <div className="font-semibold text-black w-100 flex flex-col">
-            <div ref={searchRef}>
-                <Search
-                    onShow={onShowSearch}
-                    setOnShow={() => setOnShowSearch(false)}
-                />
+            <div className="bg-red-500">
+                <Search onShow={onShowSearch} />
             </div>
             <div className="flex justify-between bg-yellow-500 px-12 py-6 ">
                 <div className="flex gap-2">
                     <Button>SHOP</Button>
                     <Button>ABOUT</Button>
-                    <Button
-                        onClick={() => setOnShowSearch(!onShowSearch)}
-                        border={false}
-                    >
+                    <Button onClick={handleSearch} border={false}>
                         🔎
                     </Button>
                 </div>

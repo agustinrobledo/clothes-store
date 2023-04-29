@@ -1,38 +1,35 @@
 import { useLayoutEffect, useRef } from "react"
-import gsap from "gsap"
+import { gsap } from "gsap"
 
-interface typeSearchProps {
+interface searchProps {
     onShow: boolean | null
-    setOnShow: () => void
 }
-
-const Search = ({ onShow, setOnShow }: typeSearchProps) => {
-    const containerRef = useRef<HTMLDivElement>(null)
+const Search = ({ onShow }: searchProps) => {
+    const showRef = useRef<boolean>(false)
+    const searchRef = useRef<HTMLDivElement>(null)
 
     useLayoutEffect(() => {
-        if (containerRef.current) {
-            if (onShow) {
-                gsap.to(containerRef.current, {
-                    y: 0,
-                    duration: 0.5,
-                    ease: "power3.out",
-                    height: "100%",
-                    transformOrigin: "bottom",
-                })
-            } else if (onShow === false) {
-                gsap.to(containerRef.current, {
-                    y: -100,
-                    duration: 0.5,
-                    ease: "power3.out",
-                    height: 0,
-                    transformOrigin: "top",
-                })
-            }
+        gsap.set(searchRef.current, { height: 0 })
+    }, [])
+
+    useLayoutEffect(() => {
+        if (onShow === false) {
+            gsap.to(searchRef.current, {
+                height: "0",
+                duration: 1,
+            })
+            showRef.current = false
+        } else if (onShow === true) {
+            gsap.to(searchRef.current, {
+                height: "auto",
+                duration: 1,
+            })
+            showRef.current = true
         }
     }, [onShow])
 
     return (
-        <div ref={containerRef} className="bg-white">
+        <div ref={searchRef} className={`bg-white`}>
             <div className="text-black pl-4 py-6">Search</div>
         </div>
     )
