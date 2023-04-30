@@ -1,11 +1,10 @@
 import { useState } from "react"
 import Button from "./Button"
 import Search from "./Search"
-import useScrollPosition from "../hooks/useScrollPosition"
+import MenuContainer from "./MenuContainer"
 
 const Navbar = () => {
     const [onShowSearch, setOnShowSearch] = useState<boolean | null>(null)
-    const scrollPosition = useScrollPosition()
 
     const handleSearch = () => {
         setOnShowSearch(!onShowSearch)
@@ -16,11 +15,7 @@ const Navbar = () => {
             <div className="bg-red-500">
                 <Search onShow={onShowSearch} />
             </div>
-            <div
-                className={`flex justify-between px-12 py-6 ${
-                    scrollPosition > 700 ? "bg-white" : "bg-yellow-400"
-                }`}
-            >
+            <MenuContainer className="flex justify-between px-12 py-6 bg-yellow-200">
                 <div className="flex gap-2">
                     <Button>SHOP</Button>
                     <Button>ABOUT</Button>
@@ -34,7 +29,7 @@ const Navbar = () => {
                     <Button>UNITED STATES</Button>
                     <Button>CART</Button>
                 </div>
-            </div>
+            </MenuContainer>
         </div>
     )
 }
