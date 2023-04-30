@@ -7,7 +7,7 @@ const useScrollPosition = () => {
     useEffect(() => {
         const updatePosition = () => {
             setScrollPosition(window.pageYOffset)
-            setTimeout(() => setPreviousScrollPosition(window.pageYOffset), 400)
+            setTimeout(() => setPreviousScrollPosition(window.pageYOffset), 100)
         }
         window.addEventListener("scroll", updatePosition)
         updatePosition()

@@ -2,6 +2,7 @@ import { useState } from "react"
 import Button from "./Button"
 import Search from "./Search"
 import MenuContainer from "./MenuContainer"
+import NavContainer from "./NavContainer"
 
 const Navbar = () => {
     const [onShowSearch, setOnShowSearch] = useState<boolean | null>(null)
@@ -11,7 +12,7 @@ const Navbar = () => {
     }
 
     return (
-        <div className="font-semibold text-black w-100 flex flex-col sticky top-0">
+        <NavContainer>
             <div className="bg-red-500">
                 <Search onShow={onShowSearch} />
             </div>
@@ -30,7 +31,7 @@ const Navbar = () => {
                     <Button>CART</Button>
                 </div>
             </MenuContainer>
-        </div>
+        </NavContainer>
     )
 }
 

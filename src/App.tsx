@@ -4,11 +4,11 @@ import "./App.css"
 
 function App() {
     return (
-        <>
+        <div className="bg-yellow-300">
             <Navbar />
             <Section index={1} />
             <Section index={2} />
-        </>
+        </div>
     )
 }
 

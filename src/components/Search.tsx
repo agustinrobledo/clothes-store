@@ -29,8 +29,10 @@ const Search = ({ onShow }: searchProps) => {
     }, [onShow])
 
     return (
-        <div ref={searchRef} className={`bg-white`}>
-            <div className="text-black pl-4 py-6">Search</div>
+        <div ref={searchRef} className={`bg-white overflow-hidden`}>
+            <div className="text-black pl-4 py-4 border-b-black border-b-4 text-2xl">
+                Search
+            </div>
         </div>
     )
 }
