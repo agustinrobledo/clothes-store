@@ -1,21 +1,26 @@
-import { useLayoutEffect, useRef, useState } from "react"
+import { useState } from "react"
 import Button from "./Button"
 import Search from "./Search"
-import { gsap } from "gsap"
+import useScrollPosition from "../hooks/useScrollPosition"
 
 const Navbar = () => {
     const [onShowSearch, setOnShowSearch] = useState<boolean | null>(null)
+    const scrollPosition = useScrollPosition()
 
     const handleSearch = () => {
         setOnShowSearch(!onShowSearch)
     }
 
     return (
-        <div className="font-semibold text-black w-100 flex flex-col">
+        <div className="font-semibold text-black w-100 flex flex-col sticky top-0">
             <div className="bg-red-500">
                 <Search onShow={onShowSearch} />
             </div>
-            <div className="flex justify-between bg-yellow-500 px-12 py-6 ">
+            <div
+                className={`flex justify-between px-12 py-6 ${
+                    scrollPosition > 700 ? "bg-white" : "bg-yellow-400"
+                }`}
+            >
                 <div className="flex gap-2">
                     <Button>SHOP</Button>
                     <Button>ABOUT</Button>
