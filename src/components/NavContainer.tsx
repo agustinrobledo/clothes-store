@@ -26,7 +26,7 @@ const NavContainer = ({ children }: navContainerProps) => {
             })
             setShow(false)
         }
-    }, [previousScrollPosition, scrollPosition])
+    }, [previousScrollPosition, scrollPosition, show])
 
     return (
         <div

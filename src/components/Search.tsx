@@ -5,7 +5,6 @@ interface searchProps {
     onShow: boolean | null
 }
 const Search = ({ onShow }: searchProps) => {
-    const showRef = useRef<boolean>(false)
     const searchRef = useRef<HTMLDivElement>(null)
 
     useLayoutEffect(() => {
@@ -18,13 +17,11 @@ const Search = ({ onShow }: searchProps) => {
                 height: "0",
                 duration: 0.3,
             })
-            showRef.current = false
         } else if (onShow === true) {
             gsap.to(searchRef.current, {
                 height: "auto",
                 duration: 0.3,
             })
-            showRef.current = true
         }
     }, [onShow])
 
