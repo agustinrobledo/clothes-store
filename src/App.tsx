@@ -1,9 +1,15 @@
-import "./App.css";
+import Navbar from "./components/Navbar/Navbar"
+import Section from "./components/Section"
+import "./App.css"
 
 function App() {
-  return <>
-    <h1 className="text-blue-600">Holis</h1>
-  </>;
+    return (
+        <div className="bg-yellow-300">
+            <Navbar />
+            <Section index={1} />
+            <Section index={2} />
+        </div>
+    )
 }
 
-export default App;
+export default App
