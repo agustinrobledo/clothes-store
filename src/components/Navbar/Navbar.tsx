@@ -1,5 +1,5 @@
 import { useState } from "react"
-import Button from "./Button"
+import Button from "../Button"
 import Search from "./Search"
 import MenuContainer from "./MenuContainer"
 import NavContainer from "./NavContainer"

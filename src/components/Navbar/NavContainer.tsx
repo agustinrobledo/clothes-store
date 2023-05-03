@@ -1,5 +1,5 @@
 import { useLayoutEffect, useRef, useState } from "react"
-import useScrollPosition from "../hooks/useScrollPosition"
+import useScrollPosition from "../../hooks/useScrollPosition"
 import { gsap } from "gsap"
 
 interface navContainerProps {
