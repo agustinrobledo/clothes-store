@@ -5,6 +5,7 @@ interface buttonProps extends React.ButtonHTMLAttributes<HTMLElement> {
     color?: string
     children: React.ReactNode
     border?: boolean
+    icon?: React.ReactNode
     className?: string
 }
 
@@ -14,6 +15,7 @@ const Button = ({
     children,
     className,
     border = true,
+    icon,
     ...rest
 }: buttonProps) => {
     return (
@@ -25,6 +27,7 @@ const Button = ({
             } duration-300 hover:bg-black hover:text-white ${className}`}
             {...rest}
         >
+            {icon}
             {children}
         </button>
     )
