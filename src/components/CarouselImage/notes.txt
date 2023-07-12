@@ -1,0 +1,27 @@
+tl: Es una instancia de la clase gsap.timeline() que se utiliza para crear una línea de tiempo de animación con las configuraciones especificadas en config. Se utiliza para controlar la animación principal.
+
+length: Almacena la longitud (cantidad de elementos) del array items.
+
+startX: Almacena la posición horizontal (en píxeles) del primer elemento en relación con su contenedor o referencia.
+
+times: Es un array que almacena los tiempos de inicio (en segundos) de cada elemento en la animación.
+
+widths: Es un array que almacena los anchos (en píxeles) de cada elemento.
+
+xPercents : Es un array que almacena los valores de desplazamiento horizontal (en porcentaje) de cada elemento.
+
+curIndex : Almacena el índice actual del elemento en la animación.
+
+pixelsPerSecond : Almacena la velocidad de desplazamiento en píxeles por segundo. Es calculada a partir de la configuración speed en config.
+
+snap : Es una función que redondea los valores de xPercent de cada elemento. Si config.snap es false, se utiliza una función identidad que no realiza ningún redondeo. De lo contrario, se utiliza la función gsap.utils.snap proporcionada por GSAP.
+
+totalWidth : Almacena el ancho total (en píxeles) de toda la animación. Es calculado sumando los valores de posición y anchos de los elementos, y teniendo en cuenta otros ajustes como el margen derecho.
+
+curX : Almacena el valor de desplazamiento horizontal actual (en píxeles) del elemento en la animación.
+
+distanceToStart : Almacena la distancia (en píxeles) desde el inicio de la animación hasta la posición actual del elemento.
+
+distanceToLoop : Almacena la distancia (en píxeles) desde la posición actual del elemento hasta el punto en el que se repite la animación.
+
+item : Almacena la referencia al elemento actual en el bucle de iteración.

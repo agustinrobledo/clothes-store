@@ -1,6 +1,8 @@
 type imageProps = {
   imageSrc: string;
   shape: "buble" | "circle" | "hexagon" | "dd" | "square";
+  containerWidth?: number,
+  selected?: boolean
 };
 const shapes = {
   buble:
@@ -20,11 +22,11 @@ const shapes = {
 //   dd: "0 0 650 650",
 // }
 
-export const ImageShape = ({ imageSrc, shape }: imageProps) => {
+export const ImageShape = ({ imageSrc, shape, selected = false }: imageProps) => {
   return (
-    <div className="">
+    <div className={shape != "buble"? ` h-full image-shape inline-block left-0 ${selected}` : `h-full image-shape inline-block relative left-0 ${selected}` }>
       <svg
-        className="block w-full h-auto"
+        className="block w-full h-full mr-4"
         width={shape == "buble"? '1124': "650"}
         height="650"
         viewBox={shape == 'buble'? "0 0 1124 612" : "0 0 650 650"}
