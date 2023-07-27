@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.position-center-y {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}

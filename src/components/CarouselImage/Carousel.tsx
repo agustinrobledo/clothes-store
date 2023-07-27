@@ -2,6 +2,7 @@ import gsap from "gsap";
 import { useEffect, useRef } from "react";
 import { ImageShape } from "./ImageShape";
 import exampleImage from "../../assets/example.jpg";
+import ArrowIcon from "./ArrowIcon";
 
 export const Carousel2 = () => {
   const myRef = useRef<HTMLDivElement>(null);
@@ -166,15 +167,17 @@ export const Carousel2 = () => {
   }, []);
 
   return (
-    <div className="container relative overflow-hidden max-h-[72vh] h-[100vh] min-w-[100vw]">
-      <button className="prev bg-blue-400 px-4 py-2 relative top-0 rounded-sm font-bold mr-8">prev</button>
+    <div className="container relative overflow-hidden max-h-[70vh] h-[55vw] min-w-[100vw]">
+      <button className="z-10 hover:opacity-100 opacity-0 absolute prev position-center-y bg-blue-400 px-8 py-8 top-0 rounded-full font-bold ml-8">
+        <ArrowIcon/>
+      </button>
       <div
         ref={myRef}
-        className="little absolute flex justify-center items-center w-max h-[50vh] pt-12"
+        className="little absolute flex justify-center items-center gap-10 w-max h-full "
       >
           <ImageShape
             imageSrc={exampleImage}
-            shape={"buble"}
+            shape={"bubble"}
           />
           <ImageShape
             imageSrc={exampleImage}
@@ -186,7 +189,7 @@ export const Carousel2 = () => {
           />
           <ImageShape
             imageSrc={exampleImage}
-            shape={"buble"}
+            shape={"bubble"}
           />
           <ImageShape
             imageSrc={exampleImage}
@@ -213,7 +216,9 @@ export const Carousel2 = () => {
             shape={"dd"}
           />
       </div>
-        <button className="next  bg-blue-400 px-4 py-2 relative top-0 rounded-sm font-bold mr-8">next</button>
+        <button className="next position-center-y hover:opacity-100 opacity-0 bg-blue-400 px-8 py-8 absolute right-0 rounded-full font-bold mr-8">
+          <ArrowIcon left={true}/>
+        </button>
     </div>
   );
 };
