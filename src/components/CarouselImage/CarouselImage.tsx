@@ -51,7 +51,7 @@ export const CarouselImage = () => {
   return (
     <div ref={containerRef} className="container relative overflow-hidden max-h-[70vh] h-[55vw] ">
       <div ref={myRef} className="little absolute left-[-10.5vw] flex justify-center items-center gap-10 w-max h-full ">
-        <ImageShape imageSrc={exampleImage} shape={'buble'} />
+        <ImageShape imageSrc={exampleImage} shape={'bubble'} />
         <ImageShape imageSrc={exampleImage} shape={'dd'}/>
         <ImageShape imageSrc={exampleImage} shape={'square'}/>
         <ImageShape imageSrc={exampleImage} shape={'circle'}/>

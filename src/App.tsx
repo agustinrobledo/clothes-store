@@ -4,8 +4,8 @@ import { Carousel2 } from './components/CarouselImage/Carousel';
 
 function App() {
   return <>
-    <CarouselImage/>
-    {/* <Carousel2></Carousel2> */}
+    {/* <CarouselImage/> */}
+    <Carousel2></Carousel2>
   </>;
 }
 
