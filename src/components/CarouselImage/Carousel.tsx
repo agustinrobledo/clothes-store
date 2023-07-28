@@ -3,11 +3,17 @@ import { useEffect, useRef } from "react";
 import { ImageShape } from "./ImageShape";
 import exampleImage from "../../assets/example.jpg";
 import ArrowIcon from "./ArrowIcon";
+import dragAndDrop from "./dragAndDrop";
 
 export const Carousel2 = () => {
   const myRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    const myElement = myRef.current;
+    if (myElement) {
+      dragAndDrop(myElement)
+    }
+
     const boxes = Array.from(
       myRef.current?.querySelectorAll<HTMLDivElement>(".image-shape") || []
     );
